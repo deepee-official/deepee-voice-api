@@ -43,10 +43,10 @@ app.post("/api/speechInput", async function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  res.send("App online ✓ (Porta " + PORT + ") | Root: " + __dirname);
+  res.send("App online ✓ (Porta " + port + ") | Root: " + __dirname);
 });
 app.get("/", function (req, res) {
-  res.send("App online ✓ (Porta " + PORT + ") | Root: " + __dirname);
+  res.send("App online ✓ (Porta " + port + ") | Root: " + __dirname);
 });
 
 app.listen(port, () => {
