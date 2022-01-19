@@ -17,7 +17,7 @@ app.use(cors());
 async function newTTS(speechText, languageId) {
   const timestamp = new Date().getTime();
   const filename = timestamp + ".mp3";
-  const url = __dirname + "\\public\\tts\\" + filename;
+  const url = __dirname + "/public/tts/" + filename;
 
   const buffer = await TTS.get({
     text: speechText,
