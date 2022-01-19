@@ -4,7 +4,8 @@ const cors = require("cors");
 const fs = require("fs");
 const googleTTS = require("node-google-tts-api");
 
-const port = 3080;
+const port = process.env.PORT;
+//const port = 3080;
 const app = express();
 const TTS = new googleTTS();
 
@@ -39,6 +40,13 @@ app.post("/api/speechInput", async function (req, res) {
       console.log("Eliminato: ", fileUrl);
     }
   });
+});
+
+app.post("/", function (req, res) {
+  res.send("App online ✓ (Porta " + PORT + ") | Root: " + __dirname);
+});
+app.get("/", function (req, res) {
+  res.send("App online ✓ (Porta " + PORT + ") | Root: " + __dirname);
 });
 
 app.listen(port, () => {
